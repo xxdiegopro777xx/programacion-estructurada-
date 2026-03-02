@@ -1,68 +1,98 @@
+
 #include <stdio.h>
-#include <stdlib.h>
-/*
+
+void menu()
+{
+    printf("Selecciona que hacer:\n");
+    printf("1) Analizar numero\n");
+    printf("2) Calculadora\n");
+    printf("3) Salir\n");
+}
+
+int calculadora(int op, int op1, int op2)
+{
+    int resultado = 0;
+
+    if(op == 1)
+    {
+        resultado = op1 + op2;
+    }
+    else if(op == 2)
+    {
+        resultado = op1 - op2;
+    }
+
+    return resultado;
+}
+
 int main()
 {
-    int x;
-    int suma =0;
-    printf("suma");
-    scanf("%d",&x);
+    int opcionP, opcionC, x, y, r;
 
-    while (x !=0) {
-        suma +=x;
-        scanf("%d",&x);
-    }
-*/
-/*
-int opcion;
-do{
-    printf("1.continuar\n");
-    printf("2.salir\n");
-    scanf("%d",&opcion);
+    do
+    {
+        menu();
+        scanf("%d", &opcionP);
 
-} while (opcion !=2);
+        switch(opcionP)
+        {
+        case 1:
+            printf("Opcion seleccionada: analizar numero\n");
+            printf("Dame un numero entero:\n");
+            scanf("%d", &x);
 
-*/
-/*
-int n,valor,suma;
- for(int i=1;i<=n;i++){
+            printf("El numero es: %d\n", x);
 
-    suma +=valor;
- }
+            if(x % 2 == 0)
+            {
+                printf("El numero es PAR\n");
+            }
+            else
+            {
+                printf("El numero es IMPAR\n");
+            }
+            break;
 
- */
+        case 2:
+            printf("Opcion seleccionada: calculadora\n");
 
-int main() {
+            printf("Dame el primer numero:\n");
+            scanf("%d", &x);
 
-    int opcion;
-    int n, promedio = 0, calificacion;
+            printf("Dame el segundo numero:\n");
+            scanf("%d", &y);
 
-    do {
-        printf("1. Ingresar calificaciones\n");
-        printf("2. Salir\n");
-        printf("Seleccione una opcion: ");
-        scanf("%d", &opcion);
+            printf("Que quieres hacer?\n");
+            printf("1) Sumar\n");
+            printf("2) Restar\n");
+            printf("3) Regresar\n");
+            scanf("%d", &opcionC);
 
-        if (opcion == 1) {
-
-            printf("Cuantas calificaciones se ingresaran: ");
-            scanf("%d", &n);
-
-            promedio = 0;
-
-            for (int i = 1; i <= n; i++) {
-                printf("Ingrese la calificacion %d: ", i);
-                scanf("%d", &calificacion);
-                promedio += calificacion;
+            if(opcionC == 1 || opcionC == 2)
+            {
+                r = calculadora(opcionC, x, y);
+                printf("El resultado es: %d\n", r);
+            }
+            else if(opcionC == 3)
+            {
+                printf("Regresando...\n");
+            }
+            else
+            {
+                printf("Opcion invalida\n");
             }
 
-            promedio = promedio / n;
+            break;
 
-            printf("El promedio es: %d\n", promedio);
+        case 3:
+            printf("Adios mundo\n");
+            break;
+
+        default:
+            printf("Opcion invalida\n");
         }
 
-    } while (opcion != 2);
+    } while(opcionP != 3);
 
     return 0;
 }
-
