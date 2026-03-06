@@ -1,0 +1,34 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    float temp [4];
+    float temp1, temp2;
+    int dummy;
+    temp[0]=20.5;
+    temp[1]=19.2;
+    int i, N=4;
+
+
+
+    printf("Temperatura 0: %f\n",temp [N]);
+    printf("Temperatura 1: %f\n",temp [N]);
+
+    for(i=0; i<4; i++)
+    {
+         printf("dame una tempertura: %d\n", &i);
+        printf("%d",temp[i]);
+    }
+    for(int i=0; i<N; i++)
+    {
+         printf("Temperatura %d: %f\n", i+1);
+        scanf("%d",&temp[i]);
+    }
+
+
+
+
+    return 0;
+}
