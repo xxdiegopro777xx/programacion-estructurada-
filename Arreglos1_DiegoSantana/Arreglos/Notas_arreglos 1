@@ -1,0 +1,21 @@
+MENU DE ARREGLOS
+cada flotante tiene 4 bytes de uso y un arreglo tiene 24, al momento en que se imprime temp imprime la dirección de memoria.
+
+
+/////////////dirección de memoria////////////
+temp1
+temp2
+temp(ref)[24]-se va para abajo al espacio vacío
+dummy
+
+
+
+
+
+
+|----------------8bits/1Byte--------------------|
+
+tipo-float-4Bytes.
+etiqueta-temp-dirección.
+cuantos-[numero]
+
