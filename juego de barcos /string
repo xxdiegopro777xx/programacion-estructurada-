@@ -1,37 +1,26 @@
-#include <iostream>
+#include <stdio.h>
 #include <string.h>
 
 int main()
 {
-
-
-   /* char alumno1[16]="Antonio\n";
-    printf("%s", &alumno1);
-    fgets(Antonio, sizeof(Antonio), stdin);
-
-    char alumno2[16]="Diego\n";
-    printf("%s", &alumno2);
-    fgets(Diego, sizeof(Diego), stdin);*/
-
+    // Arreglo de 3 jugadores predefinidos
     char jugadores[3][20];
-
     strcpy(jugadores[0], "Ana");
     strcpy(jugadores[1], "Luis");
     strcpy(jugadores[2], "Carlos");
 
-    char jugador[5][16];
-    int i;
+    // Arreglo para capturar 5 jugadores
+    char jugador[5][20];
     int longitud;
-    longitud=strlen(jugador[0]);
 
-    for(i=0; i<4; i++)
+    for(int i = 0; i < 5; i++)
     {
-        printf("anota los jugadores: \n");
-        fgets(jugador, sizeof(jugador), stdin);
-        printf("la longitud %s, es %d",jugador[0],longitud);
+        printf("Anota el jugador %d: \n", i + 1);
+        fgets(jugador[i], sizeof(jugador[i]), stdin);
+
+        longitud = strlen(jugador[i]);
+        printf("La longitud de %s es %d\n", jugador[i], longitud);
     }
-
-
 
     return 0;
 }
