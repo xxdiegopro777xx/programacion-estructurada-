@@ -4,52 +4,55 @@
 
 int main()
 {
-
-
-
-        char nombre[4][20];
+    char nombre[4][20];
     int numeros[5];
     char arreglos[5];
 
-    for(int i = 0; i < 4; i++)
+
+    arreglos[0] = 'A';
+    arreglos[1] = 'B';
+    arreglos[2] = 'C';
+    arreglos[3] = 'D';
+    arreglos[4] = 'E';
+
+
+    numeros[0] = 10;
+    numeros[1] = 20;
+    numeros[2] = 30;
+    numeros[3] = 40;
+    numeros[4] = 50;
+
+
+    for (int i = 0; i < 4; i++)
     {
         printf("Anota el nombre %d: \n", i + 1);
         fgets(nombre[i], sizeof(nombre[i]), stdin);
+    }
 
 
-        numeros[0] = 10;
-        numeros[1] = 20;
-        numeros[2] = 30;
-        numeros[3] = 40;
-        numeros[4] = 50;
-
-
-    printf("Todos los elementos del arreglo:\n");
+    printf("Todos los elementos del arreglo numeros:\n");
     for (int i = 0; i < 5; i++) {
-        printf("numeros[%d] = %d\n", i, numeros[i]);}
-
-
-        char arreglos[5];
-        printf("imprime arreglos %d:",&areglos[0]);
-        printf("imprime arreglos %d:",&areglos[1]);
-        printf("imprime arreglos %d:",&areglos[2]);
-        printf("imprime arreglos %d:",&areglos[3]);
-        printf("imprime arreglos %d:",&areglos[4]);
-        printf("%d",arreglos);
-
-        ///Carga e imprecion ejemplo
-
-        for(int i=0; i< 5;i++){
-            scanf("%d",&numeros[i]);
-        }
-        for(int i=0; i< 5;i++){
-            scanf("%d",numeros[i]);
-        }
-
-
-
-
+        printf("numeros[%d] = %d\n", i, numeros[i]);
     }
 
-return 0;
+
+    printf("Imprime arreglos:\n");
+    printf("arreglos[0] = %c\n", arreglos[0]);
+    printf("arreglos[1] = %c\n", arreglos[1]);
+    printf("arreglos[2] = %c\n", arreglos[2]);
+    printf("arreglos[3] = %c\n", arreglos[3]);
+    printf("arreglos[4] = %c\n", arreglos[4]);
+
+
+    printf("Ingresa 5 numeros:\n");
+    for (int i = 0; i < 5; i++) {
+        scanf("%d", &numeros[i]);
     }
+
+    printf("Numeros ingresados:\n");
+    for (int i = 0; i < 5; i++) {
+        printf("numeros[%d] = %d\n", i, numeros[i]);
+    }
+
+    return 0;
+}
