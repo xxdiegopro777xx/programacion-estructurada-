@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void f_doble(int b) {
+    b = b * 2;
+    printf("Doble: %d\n", b);
+}
+
+void f_triple(int *c) {
+    *c = (*c) * 3;
+    printf("Triple: %d\n", *c);
+}
+
+int main() {
+    int a;
+    printf("Dame un numero del 1 al 100: ");
+    scanf("%d", &a);
+
+    f_doble(a);
+    printf("Original tras doble: %d\n", a);
+
+    f_triple(&a);
+    printf("Original tras triple: %d\n\n", a);
+
+    // Sección de punteros corregida
+    int x = 5;
+    int *p = &x; 
+
+    // %p es el formato correcto para imprimir direcciones de memoria (punteros)
+    printf("Direccion de memoria (p): %p\n", (void*)p); 
+    // %d es para el valor al que apunta el puntero
+    printf("Valor al que apunta (*p): %d\n", *p);
+
+    return 0;
+}
